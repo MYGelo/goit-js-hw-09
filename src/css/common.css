@@ -42,19 +42,27 @@ img {
   justify-content: center;
 }
 
-.timer {
-  display: flex;
+.timer__input {
+  width: 80%;
 }
-
+.timer__btn {
+  margin-left: 5px;
+}
 .field {
   display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+
   border: 1px solid black;
   border-radius: 2px;
+  background-color: white;
+}
+.field:not(:last-child) {
   margin-right: 5px;
 }
-.value {
-  margin: 5px;
-}
 .label {
-  margin: 5px;
+  margin: 0px 5px;
+}
+.value {
+  margin: 0px 5px;
 }
