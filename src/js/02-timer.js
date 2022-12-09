@@ -3,6 +3,8 @@ import flatpickr from 'flatpickr';
 // Дополнительный импорт стилей
 import 'flatpickr/dist/flatpickr.min.css';
 
+import Notiflix from 'notiflix';
+
 const timerEl = document.querySelector('.timer');
 const timer__displayEl = document.querySelector('.timer__display');
 const timerSecondsEl = document.querySelector('.field__seconds');
@@ -28,6 +30,7 @@ const options = {
     console.log(selectedDates[0]);
     if (selectedDates[0] < new Date()) {
       startBtn.disabled = true;
+      Notiflix.Notify.warning('Please choose a date in the future');
     } else {
       startBtn.disabled = false;
     }
@@ -79,6 +82,7 @@ startBtn.addEventListener('click', () => {
     } else {
       timerEl.style.color = 'red';
       timerSecondsEl.style.color = 'red';
+      Notiflix.Notify.success('Please choose a new date');
       clearInterval(timer);
     }
   }, 1000);
